@@ -900,7 +900,7 @@ On the web, this is ``"Web"``.
         case "Linux":
         case "FreeBSD":
         case "NetBSD":
-        case "OpenBSD"
+        case "OpenBSD":
         case "BSD":
             GD.Print("Linux/BSD");
             break;
@@ -1186,6 +1186,8 @@ Returns ``true`` if the feature for the given feature tag is supported in the cu
 \ **Note:** Tag names are case-sensitive.
 
 \ **Note:** On the web platform, one of the following additional tags is defined to indicate host platform: ``web_android``, ``web_ios``, ``web_linuxbsd``, ``web_macos``, or ``web_windows``.
+
+\ **Note:** On the iOS simulator, the additional ``simulator`` tag is defined.
 
 .. rst-class:: classref-item-separator
 
