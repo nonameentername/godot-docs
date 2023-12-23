@@ -215,6 +215,14 @@ The Vulkan rendering driver. It requires Vulkan 1.0 support and automatically us
 
 The OpenGL 3 rendering driver. It uses OpenGL 3.3 Core Profile on desktop platforms, OpenGL ES 3.0 on mobile devices, and WebGL 2.0 on Web.
 
+.. _class_OS_constant_RENDERING_DRIVER_D3D12:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RenderingDriver<enum_OS_RenderingDriver>` **RENDERING_DRIVER_D3D12** = ``2``
+
+The Direct3D 12 rendering driver.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -900,7 +908,7 @@ On the web, this is ``"Web"``.
         case "Linux":
         case "FreeBSD":
         case "NetBSD":
-        case "OpenBSD"
+        case "OpenBSD":
         case "BSD":
             GD.Print("Linux/BSD");
             break;
@@ -1186,6 +1194,8 @@ Returns ``true`` if the feature for the given feature tag is supported in the cu
 \ **Note:** Tag names are case-sensitive.
 
 \ **Note:** On the web platform, one of the following additional tags is defined to indicate host platform: ``web_android``, ``web_ios``, ``web_linuxbsd``, ``web_macos``, or ``web_windows``.
+
+\ **Note:** On the iOS simulator, the additional ``simulator`` tag is defined.
 
 .. rst-class:: classref-item-separator
 
