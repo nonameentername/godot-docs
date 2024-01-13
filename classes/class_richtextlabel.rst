@@ -1305,7 +1305,32 @@ Returns the number of visible paragraphs. A paragraph is considered visible if a
 
 void **install_effect** **(** :ref:`Variant<class_Variant>` effect **)**
 
-Installs a custom effect. ``effect`` should be a valid :ref:`RichTextEffect<class_RichTextEffect>`.
+Installs a custom effect. This can also be done in the RichTextLabel inspector using the :ref:`custom_effects<class_RichTextLabel_property_custom_effects>` property. ``effect`` should be a valid :ref:`RichTextEffect<class_RichTextEffect>`.
+
+Example RichTextEffect:
+
+::
+
+    # effect.gd
+    class_name MyCustomEffect
+    extends RichTextEffect
+    
+    var bbcode = "my_custom_effect"
+    
+    # ...
+
+Registering the above effect in RichTextLabel from script:
+
+::
+
+    # rich_text_label.gd
+    extends RichTextLabel
+    
+    func _ready():
+        install_effect(MyCustomEffect.new())
+    
+        # Alternatively, if not using `class_name` in the script that extends RichTextEffect:
+        install_effect(preload("res://effect.gd").new())
 
 .. rst-class:: classref-item-separator
 
@@ -2054,7 +2079,7 @@ The vertical separation of elements in a table.
 
 :ref:`int<class_int>` **text_highlight_h_padding** = ``3``
 
-The horizontal padding around a highlighting and background color box.
+The horizontal padding around boxes drawn by the ``[fgcolor]`` and ``[bgcolor]`` tags. This does not affect the appearance of text selection.
 
 .. rst-class:: classref-item-separator
 
@@ -2066,7 +2091,7 @@ The horizontal padding around a highlighting and background color box.
 
 :ref:`int<class_int>` **text_highlight_v_padding** = ``3``
 
-The vertical padding around a highlighting and background color box.
+The vertical padding around boxes drawn by the ``[fgcolor]`` and ``[bgcolor]`` tags. This does not affect the appearance of text selection.
 
 .. rst-class:: classref-item-separator
 
