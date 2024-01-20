@@ -84,6 +84,8 @@ Properties
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`transient<class_Window_property_transient>`                                 | ``false``                |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`transient_to_focused<class_Window_property_transient_to_focused>`           | ``false``                |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`transparent<class_Window_property_transparent>`                             | ``false``                |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`unfocusable<class_Window_property_unfocusable>`                             | ``false``                |
@@ -104,7 +106,7 @@ Methods
    :widths: auto
 
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`                       | :ref:`_get_contents_minimum_size<class_Window_method__get_contents_minimum_size>` **(** **)** |virtual| |const|                                                                                                                                    |
+   | :ref:`Vector2<class_Vector2>`                       | :ref:`_get_contents_minimum_size<class_Window_private_method__get_contents_minimum_size>` **(** **)** |virtual| |const|                                                                                                                            |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`add_theme_color_override<class_Window_method_add_theme_color_override>` **(** :ref:`StringName<class_StringName>` name, :ref:`Color<class_Color>` color **)**                                                                                |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1365,6 +1367,23 @@ Note that behavior might be different depending on the platform.
 
 ----
 
+.. _class_Window_property_transient_to_focused:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **transient_to_focused** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_transient_to_focused** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_transient_to_focused** **(** **)**
+
+If ``true``, and the **Window** is :ref:`transient<class_Window_property_transient>`, this window will (at the time of becoming visible) become transient to the currently focused window instead of the immediate parent window in the hierarchy. Note that the transient parent is assigned at the time this window becomes visible, so changing it afterwards has no effect until re-shown.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Window_property_transparent:
 
 .. rst-class:: classref-property
@@ -1461,7 +1480,7 @@ If ``false``, you need to call :ref:`child_controls_changed<class_Window_method_
 Method Descriptions
 -------------------
 
-.. _class_Window_method__get_contents_minimum_size:
+.. _class_Window_private_method__get_contents_minimum_size:
 
 .. rst-class:: classref-method
 
@@ -1613,7 +1632,7 @@ Ends a bulk theme override update. See :ref:`begin_bulk_theme_override<class_Win
 
 Returns the combined minimum size from the child :ref:`Control<class_Control>` nodes of the window. Use :ref:`child_controls_changed<class_Window_method_child_controls_changed>` to update it when children nodes have changed.
 
-The value returned by this method can be overridden with :ref:`_get_contents_minimum_size<class_Window_method__get_contents_minimum_size>`.
+The value returned by this method can be overridden with :ref:`_get_contents_minimum_size<class_Window_private_method__get_contents_minimum_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2076,6 +2095,8 @@ Centers a native window on the current screen and an embedded window on its embe
 void **move_to_foreground** **(** **)**
 
 Moves the **Window** on top of other windows and focuses it.
+
+\ *Deprecated.* Use :ref:`grab_focus<class_Window_method_grab_focus>` instead.
 
 .. rst-class:: classref-item-separator
 
