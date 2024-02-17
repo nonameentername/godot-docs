@@ -49,9 +49,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`_propagate_input_event<class_SubViewportContainer_method__propagate_input_event>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual| |const| |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_propagate_input_event<class_SubViewportContainer_private_method__propagate_input_event>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual| |const| |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -107,11 +107,13 @@ For example, a 1280×720 sub-viewport with :ref:`stretch_shrink<class_SubViewpor
 Method Descriptions
 -------------------
 
-.. _class_SubViewportContainer_method__propagate_input_event:
+.. _class_SubViewportContainer_private_method__propagate_input_event:
 
 .. rst-class:: classref-method
 
 :ref:`bool<class_bool>` **_propagate_input_event** **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual| |const|
+
+**Experimental:** This method may be changed or removed in future versions.
 
 Virtual method to be implemented by the user. If it returns ``true``, the ``event`` is propagated to :ref:`SubViewport<class_SubViewport>` children. Propagation doesn't happen if it returns ``false``. If the function is not implemented, all events are propagated to SubViewports.
 
