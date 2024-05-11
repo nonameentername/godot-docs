@@ -64,8 +64,6 @@ Theme Properties
    +-----------------------------------+----------------------------------------------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_pressed<class_ScrollBar_theme_style_grabber_pressed>`        |
    +-----------------------------------+----------------------------------------------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`hscroll<class_ScrollBar_theme_style_hscroll>`                        |
-   +-----------------------------------+----------------------------------------------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`scroll<class_ScrollBar_theme_style_scroll>`                          |
    +-----------------------------------+----------------------------------------------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`scroll_focus<class_ScrollBar_theme_style_scroll_focus>`              |
@@ -84,7 +82,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**scrolling** **(** **)**
+**scrolling**\ (\ )
 
 Emitted when the scrollbar is being scrolled.
 
@@ -105,8 +103,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_custom_step** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_custom_step** **(** **)**
+- |void| **set_custom_step**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_custom_step**\ (\ )
 
 Overrides the step used when clicking increment and decrement buttons or when using arrow keys when the **ScrollBar** is focused.
 
@@ -227,20 +225,6 @@ Used when the grabber is being dragged.
 
 ----
 
-.. _class_ScrollBar_theme_style_hscroll:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **hscroll**
-
-.. container:: contribute
-
-	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_ScrollBar_theme_style_scroll:
 
 .. rst-class:: classref-themeproperty
@@ -268,3 +252,4 @@ Used as background when the **ScrollBar** has the GUI focus.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`
